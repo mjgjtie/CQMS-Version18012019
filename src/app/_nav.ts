@@ -13,76 +13,19 @@ export const navItemsAdmin = [
     title: true,
     name: 'Accounts'
   },
-  // {
-  //   name: 'Add New User',
-  //   url: '/base',
-  //   icon: 'icon-puzzle',
-  //   children: [
-  //     {
-  //       name: 'Cards',
-  //       url: '/base/cards',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Carousels',
-  //       url: '/base/carousels',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Collapses',
-  //       url: '/base/collapses',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Forms',
-  //       url: '/base/forms',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Pagination',
-  //       url: '/base/paginations',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Popovers',
-  //       url: '/base/popovers',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Progress',
-  //       url: '/base/progress',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Switches',
-  //       url: '/base/switches',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Tables',
-  //       url: '/base/tables',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Tabs',
-  //       url: '/base/tabs',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Tooltips',
-  //       url: '/base/tooltips',
-  //       icon: 'icon-puzzle'
-  //     }
-  //   ]
-  // },
   {
-    name: 'Add New Users',
-    url: '/buttons/',
+    name: 'Add New Account',
+    url: '/adduser/',
     icon: 'icon-user-follow'
   },
   {
-    name: 'Edit Users',
-    url: '/base/tables',
+    name: 'Import List Account',
+    url: '/importListAccounts/',
+    icon: 'icon-user-follow'
+  },
+  {
+    name: 'Manage Accounts',
+    url: '/manage/tableAccounts',
     icon: 'icon-cursor'
   }
 ];
@@ -102,73 +45,113 @@ export const navItemsStaff = [
     title: true,
     name: 'Staff'
   },
-  // {
-  //   name: 'Add New User',
-  //   url: '/base',
-  //   icon: 'icon-puzzle',
-  //   children: [
-  //     {
-  //       name: 'Cards',
-  //       url: '/base/cards',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Carousels',
-  //       url: '/base/carousels',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Collapses',
-  //       url: '/base/collapses',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Forms',
-  //       url: '/base/forms',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Pagination',
-  //       url: '/base/paginations',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Popovers',
-  //       url: '/base/popovers',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Progress',
-  //       url: '/base/progress',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Switches',
-  //       url: '/base/switches',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Tables',
-  //       url: '/base/tables',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Tabs',
-  //       url: '/base/tabs',
-  //       icon: 'icon-puzzle'
-  //     },
-  //     {
-  //       name: 'Tooltips',
-  //       url: '/base/tooltips',
-  //       icon: 'icon-puzzle'
-  //     }
-  //   ]
-  // },
-  
   {
     name: 'Document',
-    url: '/base/tables',
+    url: '/staff/document',
     icon: 'icon-dashboard'
+  },
+  {
+    name: 'Report',
+    url: '/base/tables',
+    icon: 'icon-note'
+  }
+];
+export const navItemsProjectManager = [
+  {
+    name: 'Dashboard',
+    url: '/dashboard',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  
+  {
+    title: true,
+    name: 'Project Manager'
+  },
+  {
+    name: 'Document',
+    url: '/projectmanager/document',
+    icon: 'icon-dashboard'
+  },
+  {
+    name: 'Report',
+    url: '/base/tables',
+    icon: 'icon-note'
+  }
+];
+export const navItemsQualityAssurance = [
+  {
+    name: 'Dashboard',
+    url: '/dashboard',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  
+  {
+    title: true,
+    name: 'Quality Assurance'
+  },
+  {
+    name: 'Document',
+    url: '/qualityAssurance/document',
+    icon: 'icon-dashboard'
+  },
+  {
+    name: 'Import Documents',
+    url: '/qualityAssurance/importDocuments',
+    icon: 'icon-user-follow'
+  },
+  {
+    name: 'My Documents',
+    url: '/qualityAssurance/myDocument',
+    icon: 'icon-cursor'
+  },
+  {
+    name: 'Manage Documents',
+    url: '/qualityAssurance/manage',
+    icon: 'icon-cursor'
+  },
+  {
+    name: 'Report',
+    url: '/base/tables',
+    icon: 'icon-note'
+  }
+];
+export const navItemsQualityAssuranceManager = [
+  {
+    name: 'Dashboard',
+    url: '/dashboard',
+    icon: 'icon-speedometer',
+    badge: {
+      variant: 'info',
+      text: 'NEW'
+    }
+  },
+  
+  {
+    title: true,
+    name: 'Quality Assurance Manager'
+  },
+  {
+    name: 'Document',
+    url: '/qualityAssuranceManager/document',
+    icon: 'icon-dashboard'
+  },
+  {
+    name: 'Import Documents',
+    url: '/qualityAssuranceManager/importDocuments',
+    icon: 'icon-user-follow'
+  },
+  {
+    name: 'Manage Documents',
+    url: '/qualityAssuranceManager/manage',
+    icon: 'icon-cursor'
   },
   {
     name: 'Report',

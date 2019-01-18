@@ -7,7 +7,11 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 import { DefaultLayoutStaffComponent } from './containers/default-layout-staff';
+import { DefaultLayoutQualityAssuranceComponent } from './containers/default-layout-qualityassurance';
+import { DefaultLayoutQualityAssuranceManagerComponent } from './containers/default-layout-qualityassurancemanager';
+import { DefaultLayoutProjectManagerComponent } from './containers/default-layout-projectmanager'
 import { ViewDocumentComponent } from './views/display/viewandcomment.component';
+
 
 
 
@@ -38,21 +42,103 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
+  // {
+  //   path: 'register',
+  //   component: RegisterComponent,
+  //   data: {
+  //     title: 'Register Page'
+  //   }
+  // },
   {
-    path: 'register',
-    component: RegisterComponent,
+    path: 'qualityAssurance',
+    component: DefaultLayoutQualityAssuranceComponent,
     data: {
-      title: 'Register Page'
-    }
+      title: 'Home'
+    },
+    children: [
+      {
+        path: "",
+        loadChildren: './views/document/document.module#DocumentModule'
+      },
+      {
+        path: 'document',
+        loadChildren: './views/document/document.module#DocumentModule'
+      },
+      {
+        path: 'view',
+        loadChildren: './views/display/viewandcomment.module#ViewDocumentModule'
+      },
+      {
+        path: 'myDocument',
+        loadChildren: './views/tables/mytableDocument.module#MyTableDocumentsModule'
+      },
+      {
+        path: 'manage',
+        loadChildren: './views/tables/tableDocumentforQA.module#TableDocumentsForQAModule'
+      },
+      {
+        path: 'importDocuments',
+        loadChildren: './views/import/importDocument.module#ImportDocumentsModule'
+      }
+    ]
   },
-  
+  {
+    path: 'qualityAssuranceManager',
+    component: DefaultLayoutQualityAssuranceManagerComponent,
+    data: {
+      title: 'Home'
+    },
+    children: [
+      {
+        path: "",
+        loadChildren: './views/document/document.module#DocumentModule'
+      },
+      {
+        path: 'document',
+        loadChildren: './views/document/document.module#DocumentModule'
+      },
+      {
+        path: 'view',
+        loadChildren: './views/display/viewandcomment.module#ViewDocumentModule'
+      },
+      {
+        path: 'manage',
+        loadChildren: './views/tables/tableDocument.module#TableDocumentsModule'
+      },
+      {
+        path: 'importDocuments',
+        loadChildren: './views/import/importDocument.module#ImportDocumentsModule'
+      }
+    ]
+  },
   {
     path: 'staff',
     component: DefaultLayoutStaffComponent,
     data: {
-      title: 'Staff'
+      title: 'Home'
     },
     children: [
+      {
+        path: 'document',
+        loadChildren: './views/document/document.module#DocumentModule'
+      },
+      {
+        path: 'view',
+        loadChildren: './views/display/viewandcomment.module#ViewDocumentModule'
+      }
+    ]
+  },
+  {
+    path: 'projectManager',
+    component: DefaultLayoutProjectManagerComponent,
+    data: {
+      title: 'Home'
+    },
+    children: [
+      {
+        path: '',
+        loadChildren: './views/document/document.module#DocumentModule'
+      },
       {
         path: 'document',
         loadChildren: './views/document/document.module#DocumentModule'
@@ -71,12 +157,16 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'base',
+        path: 'manage',
         loadChildren: './views/base/base.module#BaseModule'
       },
       {
-        path: 'buttons',
+        path: 'adduser',
         loadChildren: './views/buttons/buttons.module#ButtonsModule'
+      },
+      {
+        path: 'importListAccounts',
+        loadChildren: './views/account/importAccount.module#ImportAccountsModule'
       },
       {
         path: 'charts',

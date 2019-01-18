@@ -21,8 +21,10 @@ import { RegisterComponent } from './views/register/register.component';
 
 const APP_CONTAINERS = [
   DefaultLayoutAdminComponent,
-  DefaultLayoutStaffComponent
-  
+  DefaultLayoutStaffComponent,
+  DefaultLayoutQualityAssuranceComponent,
+  DefaultLayoutQualityAssuranceManagerComponent,
+  DefaultLayoutProjectManagerComponent
 ];
 
 import {
@@ -42,8 +44,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { DefaultLayoutAdminComponent } from './containers/default-layout-admin';
 import { DefaultLayoutStaffComponent } from './containers/default-layout-staff';
-
-
+import { DefaultLayoutQualityAssuranceComponent } from './containers/default-layout-qualityassurance';
+import { DefaultLayoutQualityAssuranceManagerComponent } from './containers/default-layout-qualityassurancemanager';
+import { DefaultLayoutProjectManagerComponent } from './containers/default-layout-projectmanager'
 
 @NgModule({
   imports: [
@@ -66,6 +69,7 @@ import { DefaultLayoutStaffComponent } from './containers/default-layout-staff';
     P500Component,
     LoginComponent,
     RegisterComponent
+    
   ],
   providers: [{
     provide: LocationStrategy,

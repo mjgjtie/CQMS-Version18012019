@@ -4,23 +4,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { ButtonsComponent } from './buttons.component';
 import { DropdownsComponent } from './dropdowns.component';
 import { BrandButtonsComponent } from './brand-buttons.component';
+import { Title } from '@angular/platform-browser';
 
 const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Buttons'
+      title: 'Add New Users'
     },
     children: [
       {
         path: '',
-        redirectTo: 'buttons'
+        redirectTo: 'addAccount'
       },
       {
-        path: 'buttons',
+        path: 'addAccount',
         component: ButtonsComponent,
         data: {
-          title: 'Buttons'
+          title: 'Add user'
         }
       },
       {

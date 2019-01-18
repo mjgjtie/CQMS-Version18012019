@@ -17,12 +17,12 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Base'
+      title: 'Manage'
     },
     children: [
       {
         path: '',
-        redirectTo: 'cards'
+        redirectTo: 'tableAccounts'
       },
       {
         path: 'cards',
@@ -46,7 +46,7 @@ const routes: Routes = [
         }
       },
       {
-        path: 'tables',
+        path: 'tableAccounts',
         component: TablesComponent,
         data: {
           title: 'Tables'
