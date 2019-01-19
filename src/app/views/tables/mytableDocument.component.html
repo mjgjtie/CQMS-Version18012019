@@ -25,7 +25,8 @@
                 <td>
                   <span class="badge badge-success">Active</span>
                 </td>
-                <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen Reviewer</button></td>
+                <td><button class="btn btn-primary" (click)="openModal('custom-modal-1')">Edit</button> <button class="btn btn-danger ml-2">Remove</button><button
+                    class="btn btn-success ml-2">Chosen Reviewer</button></td>
               </tr>
               <tr>
                 <td>Management Report</td>
@@ -34,7 +35,9 @@
                 <td>
                   <span class="badge badge-danger">Banned</span>
                 </td>
-                <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen Reviewer</button></td>
+                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                  <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen
+                    Reviewer</button></td>
               </tr>
               <tr>
                 <td>Config Comucation Template</td>
@@ -43,7 +46,9 @@
                 <td>
                   <span class="badge badge-secondary">Inactive</span>
                 </td>
-                <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen Reviewer</button></td>
+                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                  <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen
+                    Reviewer</button></td>
               </tr>
               <tr>
                 <td>Team Definition Template</td>
@@ -52,7 +57,9 @@
                 <td>
                   <span class="badge badge-warning">Pending</span>
                 </td>
-                <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen Reviewer</button></td>
+                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                  <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen
+                    Reviewer</button></td>
               </tr>
               <tr>
                 <td>Configcuration Font Template</td>
@@ -61,7 +68,9 @@
                 <td>
                   <span class="badge badge-success">Active</span>
                 </td>
-                <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen Reviewer</button></td>
+                <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                  <button class="btn btn-danger ml-2">Remove</button><button class="btn btn-success ml-2">Chosen
+                    Reviewer</button></td>
               </tr>
             </tbody>
           </table>
@@ -84,3 +93,5 @@
   </div>
   <!--/.row-->
 </div>
+
+
