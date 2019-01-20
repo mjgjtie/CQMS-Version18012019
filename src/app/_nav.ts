@@ -73,7 +73,12 @@ export const navItemsProjectManager = [
   },
   {
     name: 'Document',
-    url: '/projectmanager/document',
+    url: '/projectManager/document',
+    icon: 'icon-dashboard'
+  },
+  {
+    name: 'Manage Project',
+    url: '/projectManager/listProject',
     icon: 'icon-dashboard'
   },
   {

@@ -144,6 +144,14 @@ export const routes: Routes = [
         loadChildren: './views/document/document.module#DocumentModule'
       },
       {
+        path: 'manageProject',
+        loadChildren: './views/project/manageProject.module#ManageProjectModule'
+      },
+      {
+        path: 'listProject',
+        loadChildren: './views/project/listProject.module#ListProjectModule'
+      },
+      {
         path: 'view',
         loadChildren: './views/display/viewandcomment.module#ViewDocumentModule'
       }
