@@ -20,6 +20,7 @@ export class ListProjectComponent {
     $(this).siblings('[data-toggle]').removeClass('active')
     $('.surveys').removeClass('grid list').addClass()
     });
+    
   }
 
   // openModal() {
