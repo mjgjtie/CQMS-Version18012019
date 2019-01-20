@@ -1,42 +1,5 @@
 <div class="animated fadeIn">
-  <!-- <div id="app"><input type="file">
-    <nav class="container">
-      <div>
-        <table class="table table-sm table-hover">
-          <tbody>
-            <tr></tr>
-            <tr>
-              <td>FULL ROOM NAME: </td>
-              <td>Quality Assissment</td>
-            </tr>
-            <tr>
-              <td>Staff ID</td>
-              <td>FullName</td>
-            </tr>
-            <tr>
-              <td>T155100</td>
-              <td>Võ Quang Thiện</td>
-            </tr>
-            <tr>
-              <td>T155100</td>
-              <td>Võ Quang Thiện</td>
-            </tr>
-            <tr>
-              <td>T155100</td>
-              <td>Võ Quang Thiện</td>
-            </tr>
-            <tr>
-              <td>T155100</td>
-              <td>Võ Quang Thiện</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </nav>
-  </div>
 
-  
-  <button class="btn btn-success">Add</button>  -->
 
   <!-- <div class="row">
       <div class="col-md-2"></div>
@@ -147,7 +110,7 @@
           </div>
         </div>
         <br>
-        <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+        <button type="button" class="btn btn-success btn-s" (click)="openDialog()" [disabled]="!uploader.getNotUploadedItems().length">
           <span class="glyphicon glyphicon-upload"></span> Upload all
         </button>
         <button type="button" class="btn btn-warning btn-s" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
@@ -160,4 +123,5 @@
     </div>
   </div>
 
+  
 </div>
