@@ -42,13 +42,13 @@ export const routes: Routes = [
       title: 'Login Page'
     }
   },
-  // {
-  //   path: 'register',
-  //   component: RegisterComponent,
-  //   data: {
-  //     title: 'Register Page'
-  //   }
-  // },
+  {
+    path: 'register',
+    component: RegisterComponent,
+    data: {
+      title: 'Register Page'
+    }
+  },
   {
     path: 'qualityAssurance',
     component: DefaultLayoutQualityAssuranceComponent,
