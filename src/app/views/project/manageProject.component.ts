@@ -137,10 +137,13 @@ export class ManageProjectComponent {
       buttonsDiv.appendChild(buttonDelete);
   
       $('.backlog').append(taskDiv);
-  
-      
-  
     });
+    $("document").ready(function(){
+      $(".button-modal").on("click", function() {
+        $("#exampleModal").alert("modal-dialog");
+      });
+    });
+    
   }
 
   // openModal() {
