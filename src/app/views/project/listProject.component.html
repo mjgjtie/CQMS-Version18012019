@@ -4,6 +4,7 @@
     <div class="form">
         <input type="text" placeholder="Type Project" id="project" />
         <button class="button" id="add-button">Add Project</button>
+        <button type="button" class="btn btn-primary px-4" style="float:right" (click)="htmlInsideModal.open()" >Invite</button>
       </div>
       <br>
     <ul class="surveys grid backlog">
@@ -133,4 +134,60 @@
       
     </ul>  
 </div>
-
+<!--Modal-->
+<modal #htmlInsideModal >
+  <ng-template #modalHeader>
+    <h2>Invite</h2>
+  </ng-template>
+  <ng-template #modalBody>
+    <div class="search">
+      
+      <div class="input-form">
+        <input placeholder="Search Here"/>
+      </div>
+      <button></button>
+    </div>
+    <div class="content">
+      <!-- Row One-->
+      <div class="row">
+        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"/></div>
+        <div class="description">
+          <h2>Andy Tran</h2>
+          <p class="meta">HTML, CSS, JavaScript</p>
+          <p><span class="location">San Jose</span><a class="website" href="#">andytran.me</a></p>
+        </div>
+        <div class="select">
+          <div class="dribbble"><span></span></div>
+        </div>
+      </div>
+      <!-- Row Two-->
+      <div class="row">
+        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"/></div>
+        <div class="description">
+          <h2>Chris Coyier</h2>
+          <p class="meta">HTML, CSS, JavaScript, CodePen, Sweg</p>
+          <p><span class="location">Unknown</span><a class="website" href="#">github.com/chriscoyier</a></p>
+        </div>
+        <div class="select">
+          <div class="dribbble selected"><span></span></div>
+        </div>
+      </div>
+      <!-- Row Three-->
+      <div class="row">
+        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"/></div>
+        <div class="description">
+          <h2>Tim Sabat</h2>
+          <p class="meta">HTML, CSS, JavaScript, CodePen, Sweg</p>
+          <p><span class="location">Unknown</span><a class="website" href="#">boomboomboom.biz</a></p>
+        </div>
+        <div class="select">
+          <div class="dribbble"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #modalFooter>
+    <!-- <input type="text" placeholder="Send invite by e-mail"/> -->
+    <button class="btn btn-primary">Send Invite</button>
+  </ng-template>
+</modal>

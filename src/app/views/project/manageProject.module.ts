@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FileUploadModule} from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {ModalModule} from 'angular-custom-modal';
 import { HttpClientModule } from '@angular/common/http';
 import { ManageProjectComponent } from './manageProject.component';
 import { FormsModule } from '@angular/forms'; 
@@ -18,7 +18,8 @@ import { ManageProjectRoutingModule } from './manageProject-routing.module';
     ManageProjectRoutingModule,
     FormsModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    ModalModule
   ],
   declarations: [
     ManageProjectComponent,

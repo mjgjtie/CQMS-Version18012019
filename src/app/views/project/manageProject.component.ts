@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalService } from '../../_services';
 import * as $ from 'jquery';
-
+import {ModalModule} from 'angular-custom-modal';
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'manageProject.component.html',

@@ -23,7 +23,15 @@
                   </div>
                   <div class="row">
                     <div class="col-6">
-                      <button type="button" class="btn btn-primary px-4" routerLink="/projectManager">Login</button>
+                      <button type="button" class="btn btn-primary px-4" (click)="htmlInsideModal.open()" >Login</button>
+                      <modal #htmlInsideModal>
+                        <ng-template #modalHeader>
+                          <h2>Successful</h2>
+                        </ng-template>
+                        <ng-template #modalBody>
+                          <button type="button" class="btn btn-success" routerLink="/projectManager">OK</button>
+                        </ng-template>
+                      </modal>
                     </div>
                     <div class="col-6 text-right">
                       <button type="button" class="btn btn-link px-0" >Forgot password?</button>

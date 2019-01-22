@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {ModalModule} from 'angular-custom-modal';
 @Component({
   templateUrl: 'document.component.html',
   styleUrls: ['./../../../scss/listdocument.css']

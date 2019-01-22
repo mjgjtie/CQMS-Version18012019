@@ -250,3 +250,179 @@
   margin: 0;
   background: #8DC63F;
 }
+
+
+/* Modal*/
+.search {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0 0 20px;
+}
+.search .input-form {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.search .input-form:before, .search .input-form:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: none;
+  background: #E84F89;
+  width: 20%;
+  height: 2px;
+}
+.search .input-form:after {
+  left: auto;
+  right: 50%;
+}
+.search .input-form.focused:before, .search .input-form.focused:after {
+  display: block;
+}
+.search .input-form.focused:before {
+  -webkit-animation: slidingLeft 2s infinite;
+          animation: slidingLeft 2s infinite;
+}
+.search .input-form.focused:after {
+  -webkit-animation: slidingRight 2s infinite;
+          animation: slidingRight 2s infinite;
+}
+.search input {
+  outline: none;
+  background: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-bottom: 1px solid #EDEDED;
+  padding: 5px 10px;
+}
+.search button {
+  outline: none;
+  position: relative;
+  background: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 0;
+  margin: 0 0 0 10px;
+  cursor: pointer;
+}
+.search button:before, .search button:after {
+  content: '';
+  display: block;
+  width: 1px;
+}
+.search button:before {
+  width: 14px;
+  height: 14px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 100%;
+  box-sizing: border-box;
+}
+.search button:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #DEDEDE;
+  height: 6px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.thumbnail {
+  width: 80px;
+  min-width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  margin: 0 40px 0 0;
+  overflow: hidden;
+}
+.thumbnail img {
+  display: block;
+  width: 100%;
+}
+
+.description {
+  width: 100%;
+}
+.description h2 {
+  display: block;
+  margin: 0 0 10px;
+  color: #85B754;
+  font-size: 18px;
+}
+.description .meta {
+  margin: 0 0 10px;
+  color: #E1E1E1;
+  font-size: 12px;
+}
+.description .location {
+  margin: 0 10px 0 0;
+  color: #9A9A9A;
+}
+.description .website {
+  color: #343434;
+  text-decoration: none;
+}
+
+.dribbble, .dribbble:before, .dribbble:after, .dribbble span {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #DEDEDE;
+  border-radius: 100%;
+  transition: 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+.dribbble:before, .dribbble:after, .dribbble span, .dribbble:before span {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  display: block;
+}
+.dribbble:after {
+  right: -100px;
+  bottom: -100px;
+}
+.dribbble span, .dribbble:before span, .dribbble:after span {
+  top: -100px;
+  left: -100px;
+  height: 30px;
+}
+.dribbble.selected, .selected.dribbble:before, .selected.dribbble:after, .dribbble span.selected {
+  border-color: #E84F89;
+}
+.dribbble.selected:before, .selected.dribbble:after, .dribbble span.selected, .dribbble:before span.selected {
+  top: -14px;
+  left: -6px;
+}
+.dribbble.selected:after {
+  top: auto;
+  right: -6px;
+  bottom: -14px;
+  left: auto;
+}
+.dribbble.selected span, .selected.dribbble:before span, .selected.dribbble:after span, .dribbble span.selected span {
+  top: -5px;
+  left: -11px;
+  height: 50px;
+  border-color: #E84F89;
+}
