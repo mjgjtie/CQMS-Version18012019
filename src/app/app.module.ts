@@ -75,10 +75,7 @@ import { DefaultLayoutProjectManagerComponent } from './containers/default-layou
     RegisterComponent
     
   ],
-  providers: [{
-    provide: LocationStrategy,
-    useClass: HashLocationStrategy
-  }],
+
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
