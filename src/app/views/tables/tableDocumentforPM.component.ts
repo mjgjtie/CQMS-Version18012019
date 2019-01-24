@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { ModalModule } from 'angular-custom-modal';
 @Component({
   selector: 'app-dashboard',
-  templateUrl: 'tableDocumentforQA.component.html'
+  templateUrl: 'tableDocumentforPM.component.html',
+  styleUrls: ['./../../../scss/listProject.css']
 })
-export class TableDocumentForQAComponent {
+export class TableDocumentForPMComponent {
 
   constructor() { }
 

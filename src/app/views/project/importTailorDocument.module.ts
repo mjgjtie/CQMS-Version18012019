@@ -2,30 +2,29 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FileUploadModule} from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ModalModule } from 'angular-custom-modal';
+
 import { HttpClientModule } from '@angular/common/http';
-import { TableDocumentForQAComponent } from './tableDocumentforQA.component';
+import { ImportTailorDocumentsComponent } from "./importTailorDocument.component";
 import { FormsModule } from '@angular/forms'; 
 
 // Buttons Routing
-import { TableDocumentsForQARoutingModule } from './tableDocumentforQA-routing.module';
+import { ImportTailorDocumentsRoutingModule } from './importTailorDocument-routing.module';
 
 // Angular
 
 @NgModule({
   imports: [
     CommonModule,
-    TableDocumentsForQARoutingModule,
+    ImportTailorDocumentsRoutingModule,
     FormsModule,
     FileUploadModule,
-    HttpClientModule,
-    ModalModule
+    HttpClientModule
   ],
   declarations: [
-    TableDocumentForQAComponent,
+    ImportTailorDocumentsComponent,
     
   ]
 })
-export class TableDocumentsForQAModule { }
+export class ImportTailorDocumentsModule { }
 
 

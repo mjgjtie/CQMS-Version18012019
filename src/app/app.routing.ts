@@ -152,6 +152,14 @@ export const routes: Routes = [
         loadChildren: './views/project/listProject.module#ListProjectModule'
       },
       {
+        path: 'importDocuments',
+        loadChildren: './views/project/importTailorDocument.module#ImportTailorDocumentsModule'
+      },
+      {
+        path: 'manage',
+        loadChildren: './views/tables/tableDocumentforPM.module#TableDocumentsForPMModule'
+      },
+      {
         path: 'view',
         loadChildren: './views/display/viewandcomment.module#ViewDocumentModule'
       }

@@ -4,28 +4,28 @@ import {FileUploadModule} from 'ng2-file-upload';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ModalModule } from 'angular-custom-modal';
 import { HttpClientModule } from '@angular/common/http';
-import { TableDocumentForQAComponent } from './tableDocumentforQA.component';
+import { TableDocumentForPMComponent } from './tableDocumentforPM.component';
 import { FormsModule } from '@angular/forms'; 
 
 // Buttons Routing
-import { TableDocumentsForQARoutingModule } from './tableDocumentforQA-routing.module';
+import { TableDocumentsForPMRoutingModule } from './tableDocumentforPM-routing.module';
 
 // Angular
 
 @NgModule({
   imports: [
     CommonModule,
-    TableDocumentsForQARoutingModule,
+    TableDocumentsForPMRoutingModule,
     FormsModule,
     FileUploadModule,
     HttpClientModule,
     ModalModule
   ],
   declarations: [
-    TableDocumentForQAComponent,
+    TableDocumentForPMComponent,
     
   ]
 })
-export class TableDocumentsForQAModule { }
+export class TableDocumentsForPMModule { }
 
 

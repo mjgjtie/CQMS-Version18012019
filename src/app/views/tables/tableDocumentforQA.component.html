@@ -25,7 +25,7 @@
                 <td>
                   <span class="badge badge-success">Active</span>
                 </td>
-                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
+                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2" (click)="htmlInsideModal2.close()">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
               </tr>
               <tr>
                 <td>Management Report</td>
@@ -34,7 +34,7 @@
                 <td>
                   <span class="badge badge-danger">Banned</span>
                 </td>
-                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
+                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2" (click)="htmlInsideModal2.close()">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
               </tr>
               <tr>
                 <td>Config Comucation Template</td>
@@ -43,7 +43,7 @@
                 <td>
                   <span class="badge badge-secondary">Inactive</span>
                 </td>
-                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
+                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2" (click)="htmlInsideModal2.close()">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
               </tr>
               <tr>
                 <td>Team Definition Template</td>
@@ -52,7 +52,7 @@
                 <td>
                   <span class="badge badge-warning">Pending</span>
                 </td>
-                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
+                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2" (click)="htmlInsideModal2.close()">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
               </tr>
               <tr>
                 <td>Configcuration Font Template</td>
@@ -61,7 +61,7 @@
                 <td>
                   <span class="badge badge-success">Active</span>
                 </td>
-                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
+                <td><button class="btn btn-primary">Read</button> <button class="btn btn-danger ml-2" (click)="htmlInsideModal2.close()">Reject</button><button class="btn btn-success ml-2">Send QAM</button></td>
               </tr>
             </tbody>
           </table>
@@ -84,3 +84,23 @@
   </div>
   <!--/.row-->
 </div>
+<!-- <modal #htmlInsideModal2>
+  <ng-template #modalHeader>
+    <h2>Are you sure to reject this ?</h2>
+  </ng-template>
+  <ng-template #modalBody >
+      <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Recipient:</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+          <div style="float:right">
+              <button type="button" class="btn btn-secondary" style="margin-right:15px" (click)="htmlInsideModal2.close()">Cancel</button>
+              <button type="button" class="btn btn-danger" >Remove</button>
+            </div>
+  </ng-template>
+</modal> -->

@@ -82,6 +82,16 @@ export const navItemsProjectManager = [
     icon: 'icon-dashboard'
   },
   {
+    name: 'Import Documents',
+    url: '/projectManager/importDocuments',
+    icon: 'icon-user-follow'
+  },
+  {
+    name: 'Manage Documents',
+    url: '/projectManager/manage',
+    icon: 'icon-cursor'
+  },
+  {
     name: 'Report',
     url: '/base/tables',
     icon: 'icon-note'
