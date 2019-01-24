@@ -1,156 +1,154 @@
 <div class="animated fadeIn">
-    <span class="toggler active" data-toggle="grid"><span class="entypo-layout"></span></span>
-    <span class="toggler" data-toggle="list"><span class="entypo-list"></span></span>
-    <div class="form">
-        <input type="text" placeholder="Type Project" id="project" />
-        <button class="button" id="add-button">Add Project</button>
-        <button type="button" class="btn btn-primary px-4" style="float:right" (click)="htmlInsideModal.open()" >Invite</button>
+  <div class="form">
+    <input type="text" placeholder="Type Project" id="project" />
+    <button class="button" id="add-button">Add Project</button>
+    <button type="button" class="btn btn-primary px-4" style="float:right" (click)="htmlInsideModal.open()">Invite</button>
+  </div>
+  <br>
+  <ul class="surveys grid backlog">
+    <p>January </p>
+    <hr>
+    <li class="survey-item">
+
+      <span class="survey-name" routerLink="/projectManager/manageProject">
+        UK Beer May 2014
+      </span>
+      <span class="survey-country grid-only">
+        UK
+      </span>
+      <div class="pull-right">
+
+        <span class="survey-progress">
+          <span class="survey-progress-bg">
+            <span class="survey-progress-fg" style="width: 88%;"></span>
+          </span>
+
+          <span class="survey-progress-labels">
+            <span class="survey-progress-label">
+              88%
+            </span>
+
+            <span class="survey-completes">
+              490 / 500
+            </span>
+          </span>
+        </span>
+
+        <span class="survey-end-date ended">
+          2014 - May 10
+        </span>
       </div>
-      <br>
-    <ul class="surveys grid backlog">
-      <p>January </p>
-      <hr>
-      <li class="survey-item">
-        
-        <span class="survey-name" routerLink="/projectManager/manageProject">
-          UK Beer May 2014
-        </span>
-        <span class="survey-country grid-only">
-          UK
-        </span>
-        <div class="pull-right">
-          
-          <span class="survey-progress">
-            <span class="survey-progress-bg">
-              <span class="survey-progress-fg" style="width: 88%;"></span>
+    </li>
+    <li class="survey-item">
+      <span class="survey-name" routerLink="/projectManager/manageProject">
+        Pepsi Tracker New Orleans
+      </span>
+      <span class="survey-country grid-only">
+        US
+      </span>
+      <div class="pull-right">
+        <span class="survey-progress">
+          <span class="survey-progress-bg">
+            <span class="survey-progress-fg" style="width: 25%;"></span>
+          </span>
+          <span class="survey-progress-labels">
+            <span class="survey-progress-label">
+              25%
             </span>
-            
-            <span class="survey-progress-labels">
-              <span class="survey-progress-label">
-                88%
-              </span>
-    
-              <span class="survey-completes">
-                490 / 500
-              </span>
+            <span class="survey-completes">
+              150 / 500
             </span>
           </span>
-          
-           <span class="survey-end-date ended">
-            2014 - May 10
+        </span>
+        <span class="survey-end-date">
+          2014 - July 12
+        </span>
+      </div>
+    </li>
+    <li class="survey-item">
+      <span class="survey-name" routerLink="/projectManager/manageProject">
+        Global Music Brand Tracker
+      </span>
+
+      <span class="survey-country grid-only">
+        US
+      </span>
+
+      <div class="pull-right">
+        <span class="survey-end-date">
+          2014 - Oct 1
+        </span>
+        <span class="survey-stage">
+          <span class="stage draft">Draft</span>
+          <span class="stage awarded active">Awarded</span>
+          <span class="stage live">Live</span>
+          <span class="stage ended">Ended</span>
+        </span>
+      </div>
+    </li>
+  </ul>
+  <br>
+  <ul class="surveys grid">
+    <p>November </p>
+    <hr>
+    <li class="survey-item">
+      <span class="survey-name" routerLink="/projectManager/manageProject">
+        UK Beer May 2014
+      </span>
+
+      <span class="survey-country grid-only">
+        UK
+      </span>
+
+      <div class="pull-right">
+
+        <span class="survey-progress">
+          <span class="survey-progress-bg">
+            <span class="survey-progress-fg" style="width: 88%;"></span>
           </span>
-        </div>
-      </li>
-      <li class="survey-item">    
-        <span class="survey-name" routerLink="/projectManager/manageProject">
-          Pepsi Tracker New Orleans
-        </span>
-        <span class="survey-country grid-only">
-          US
-        </span>
-        <div class="pull-right">
-          <span class="survey-progress">
-            <span class="survey-progress-bg">
-              <span class="survey-progress-fg" style="width: 25%;"></span>
+
+          <span class="survey-progress-labels">
+            <span class="survey-progress-label">
+              88%
             </span>
-            <span class="survey-progress-labels">
-              <span class="survey-progress-label">
-                25%
-              </span>
-              <span class="survey-completes">
-                150 / 500
-              </span>
-            </span>
-          </span>
-           <span class="survey-end-date">
-            2014 - July 12
-          </span>
-        </div>
-      </li>
-      <li class="survey-item">
-        <span class="survey-name" routerLink="/projectManager/manageProject" >
-          Global Music Brand Tracker
-        </span>
-        
-        <span class="survey-country grid-only">
-          US
-        </span>
-        
-        <div class="pull-right">
-          <span class="survey-end-date">
-            2014 - Oct 1
-          </span>
-          <span class="survey-stage">
-            <span class="stage draft">Draft</span>
-            <span class="stage awarded active">Awarded</span>
-            <span class="stage live">Live</span>
-            <span class="stage ended">Ended</span>        
-          </span>
-        </div>
-      </li>
-    </ul>  
-    <br>
-    <ul class="surveys grid">
-        <p>November </p>
-        <hr>
-      <li class="survey-item">
-        <span class="survey-name" routerLink="/projectManager/manageProject">
-          UK Beer May 2014
-        </span>
-        
-        <span class="survey-country grid-only">
-          UK
-        </span>
-        
-        <div class="pull-right">
-          
-          <span class="survey-progress">
-            <span class="survey-progress-bg">
-              <span class="survey-progress-fg" style="width: 88%;"></span>
-            </span>
-            
-            <span class="survey-progress-labels">
-              <span class="survey-progress-label">
-                88%
-              </span>
-    
-              <span class="survey-completes">
-                490 / 500
-              </span>
+
+            <span class="survey-completes">
+              490 / 500
             </span>
           </span>
-          
-           <span class="survey-end-date ended">
-            2014 - May 10
-          </span>
-          <span class="survey-stage">
-            <span class="stage draft">Draft</span>
-            <span class="stage awarded">Awarded</span>
-            <span class="stage live">Live</span>
-            <span class="stage ended active">Ended</span>        
-          </span>
-        </div>
-      </li>
-      
-    </ul>  
+        </span>
+
+        <span class="survey-end-date ended">
+          2014 - May 10
+        </span>
+        <span class="survey-stage">
+          <span class="stage draft">Draft</span>
+          <span class="stage awarded">Awarded</span>
+          <span class="stage live">Live</span>
+          <span class="stage ended active">Ended</span>
+        </span>
+      </div>
+    </li>
+
+  </ul>
 </div>
 <!--Modal-->
-<modal #htmlInsideModal >
+<modal #htmlInsideModal>
   <ng-template #modalHeader>
     <h2>Invite</h2>
   </ng-template>
   <ng-template #modalBody>
     <div class="search">
-      
+
       <div class="input-form">
-        <input placeholder="Search Here"/>
+        <input placeholder="Search Here" />
       </div>
       <button></button>
     </div>
     <div class="content">
       <!-- Row One-->
       <div class="row">
-        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"/></div>
+        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png" /></div>
         <div class="description">
           <h2>Andy Tran</h2>
           <p class="meta">HTML, CSS, JavaScript</p>
@@ -162,7 +160,7 @@
       </div>
       <!-- Row Two-->
       <div class="row">
-        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"/></div>
+        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png" /></div>
         <div class="description">
           <h2>Chris Coyier</h2>
           <p class="meta">HTML, CSS, JavaScript, CodePen, Sweg</p>
@@ -174,7 +172,7 @@
       </div>
       <!-- Row Three-->
       <div class="row">
-        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"/></div>
+        <div class="thumbnail"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png" /></div>
         <div class="description">
           <h2>Tim Sabat</h2>
           <p class="meta">HTML, CSS, JavaScript, CodePen, Sweg</p>
@@ -188,6 +186,10 @@
   </ng-template>
   <ng-template #modalFooter>
     <!-- <input type="text" placeholder="Send invite by e-mail"/> -->
-    <button class="btn btn-primary">Send Invite</button>
+    <div style="float:right">
+      <button type="button" class="btn btn-secondary" style="margin-right:15px" (click)="htmlInsideModal.close()">Cancel</button>
+      <button type="button" class="btn btn-primary">Send Invite</button>
+    </div>
+
   </ng-template>
 </modal>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ModalService } from '../../_services';
+import { ModalModule } from 'angular-custom-modal';
+import * as $ from 'jquery';
 @Component({
   selector: 'app-dashboard',
   templateUrl: 'mytableDocument.component.html'
@@ -10,9 +11,11 @@ export class MyTableDocumentComponent {
   constructor() {
   }
 
-  // ngOnInit() {
-  //     this.bodyText = 'This text can be updated in modal 1';
-  // }
+  ngOnInit() {
+    $(function () {
+      $('#datetimepicker1').datetimepicker();
+    });
+  }
 
   // openModal() {
   //     this.modalService.open();

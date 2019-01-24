@@ -137,7 +137,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadChildren: './views/document/document.module#DocumentModule'
+        loadChildren: './views/project/listProject.module#ListProjectModule'
       },
       {
         path: 'document',
