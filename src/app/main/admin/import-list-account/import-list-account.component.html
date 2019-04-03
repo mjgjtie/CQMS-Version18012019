@@ -1,0 +1,70 @@
+<nz-content
+  class="content"
+  style="background:#fff;margin-top: 20px; padding: 24px; min-height: 100vh ; display: flex; justify-content: center ; flex-direction: column "
+>
+  <div style="width: 100% ; display: flex; justify-content: center;">
+    <div>
+      <nz-upload
+        [nzLimit]="2"
+        [(nzFileList)]="fileList"
+        [nzBeforeUpload]="beforeUpload"
+      >
+        <button nz-button>
+          <i nz-icon type="upload"></i><span>Select File</span>
+        </button>
+      </nz-upload>
+      <button
+        nz-button
+        [nzType]="'primary'"
+        [nzLoading]="uploading"
+        (click)="handleUpload()"
+        [disabled]="fileList.length == 0"
+        style="margin-top: 16px"
+      >
+        {{ uploading ? "Uploading" : "Import" }}
+      </button>
+      <div style="margin-top:20px">
+        <nz-alert
+          style="margin:2px"
+          *ngFor="let error of errors"
+          nzType="error"
+          nzMessage="{{ error }}"
+          nzShowIcon
+        ></nz-alert>
+      </div>
+    </div>
+  </div>
+
+  <div
+    style="width: 100%;  display: flex; justify-content: center;"
+  >
+    <nz-table
+      #nzTable
+      [nzNoResult]="'No Result'"
+      [nzData]="accounts"
+      [nzPageSize]="10"
+      [nzLoading]="loadingTable"
+    >
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Date registed</th>
+          <th>Role</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-template ngFor let-data [ngForOf]="nzTable.data">
+          <tr>
+            <td style="width: 240px">{{ data.name }}</td>
+            <td style="width: 240px">{{ data.email }}</td>
+            <td style="width: 240px">{{ data.role }}</td>
+            <td style="width: 240px">
+              {{ data.status ? "Active" : "Deactive" }}
+            </td>
+          </tr>
+        </ng-template>
+      </tbody>
+    </nz-table>
+  </div>
+</nz-content>
