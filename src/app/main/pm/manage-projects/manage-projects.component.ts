@@ -59,6 +59,6 @@ export class ManageProjectsComponent implements OnInit {
   }
 
   navigateView(id) {
-    this.router.navigate([`/main/pm/manage-projects/view/${id}`]);
+    this.router.navigate([`/main/pm/manage-projects/taskBoard/${id}`]);
   }
 }

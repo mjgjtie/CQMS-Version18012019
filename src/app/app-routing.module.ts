@@ -10,6 +10,7 @@ import { AuthService } from "./login/auth.service";
 import { AuthGuardService } from "./services/auth-guard.service";
 import { PmComponent } from "./main/pm/pm.component";
 import { ManageProjectsComponent } from "./main/pm/manage-projects/manage-projects.component";
+import { TaskProjectsComponent } from "./main/pm/manage-projects/task-projects.component";
 import { ProjectFormComponent } from "./main/pm/project-form/project-form.component";
 import { PublicDocumentComponent } from "./main/pm/public-document/public-document.component";
 import { DocumentFormComponent } from "./main/pm/document-form/document-form.component";
@@ -104,6 +105,12 @@ const routes: Routes = [
           {
             path: "manage-projects/view/:id/add",
             component: DocumentFormComponent,
+            canActivate: [AuthGuardService]
+          },
+          
+          {
+            path: "manage-projects/taskBoard/:id",
+            component: TaskProjectsComponent,
             canActivate: [AuthGuardService]
           }
         ]

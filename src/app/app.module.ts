@@ -21,6 +21,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { AdminServiceService } from './main/admin/admin-service.service';
 import { PmComponent } from './main/pm/pm.component';
 import { ManageProjectsComponent } from './main/pm/manage-projects/manage-projects.component';
+import { TaskProjectsComponent } from './main/pm/manage-projects/task-projects.component';
 import { PublicDocumentComponent } from './main/pm/public-document/public-document.component';
 import { ProjectFormComponent } from './main/pm/project-form/project-form.component';
 import { DocumentFormComponent } from './main/pm/document-form/document-form.component';
@@ -46,6 +47,8 @@ registerLocaleData(en);
     DocumentFormComponent,
     NewPublicDocumentComponent,
     AllDocumentsComponent
+    ,
+    TaskProjectsComponent
   ],
   imports: [
     BrowserModule,
