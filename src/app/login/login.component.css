@@ -1,10 +1,21 @@
+.content{
+  background:#f0f2f5;
+  padding: 24px; 
+  min-height: 100vh ; 
+  display: flex; 
+  justify-content: center ;
+}
 .form-container {
-  width: 700px;
+  width: 500px;
   padding: 15px 20px;
   overflow: hidden;
   /* background: linear-gradient(75deg, #c02425, #f0cb35); */
   background: #fff;
-  height: auto;
+  height: 100%;
+  border-style: solid;
+  display: flex; 
+  justify-content: center ;
+  margin: auto;
 }
 .content {
   background: #fff;
@@ -25,3 +36,4 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+

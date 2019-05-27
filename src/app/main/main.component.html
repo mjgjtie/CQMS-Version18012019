@@ -1,93 +1,93 @@
 <nz-layout class="layout" [ngStyle]="{ 'min-height': '100vh' }">
-  <nz-header style="background:linear-gradient(75deg, #c02425, #f0cb35);">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" [nzWidth]="200"
+    style="background:#fff">
     <div class="logo"></div>
-    <div class="navigation-container">
-      <ul
-        nz-menu
-        [nzTheme]="'dark'"
-        [nzMode]="'horizontal'"
-        style="line-height: 64px; background-color: transparent"
-      >
-        <li>
-          <nz-dropdown [nzTrigger]="'click'">
-            <a nz-dropdown> {{ me?.name }} <i nz-icon type="down"></i> </a>
-            <ul nz-menu>
-              <li nz-menu-item>1st menu item</li>
-              <li nz-menu-item (click)="logout()">
-                Logout
-              </li>
-            </ul>
-          </nz-dropdown>
-        </li>
-      </ul>
-    </div>
-  </nz-header>
+    <ul nz-menu nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" style="height:100%" [nzInlineCollapsed]="isCollapsed">
+      <li *ngIf="me?.role === 'admin'" routerLinkActive="ant-menu-item-selected" nz-menu-item>
+        <span title><i nz-icon type="user" [routerLink]="['/main/admin/add-new-account']"></i><span class="nav-text"><a
+              [routerLink]="['/main/admin/add-new-account']">Add New Account</a></span></span>
+      </li>
+      <li *ngIf="me?.role === 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span title><i nz-icon type="user" [routerLink]="['/main/admin/import-list-account']"></i><span class="nav-text"><a
+              [routerLink]="['/main/admin/import-list-account']">Import List Account</a></span></span>
+      </li>
+      <li *ngIf="me?.role === 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span title><i nz-icon type="user" [routerLink]="['/main/admin/manage-account']"></i><span class="nav-text"><a
+              [routerLink]="['/main/admin/manage-account']">Manage Account</a></span></span>
+      </li>
+      <li nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <!-- <a [routerLink]="['/main/pm/manage-projects']">
+                <span title><i nz-icon type="user"></i> Projects</span>
+              </a> -->
+        <span title><i nz-icon type="user" [routerLink]="['/main/pm/manage-projects']"></i><span class="nav-text"><a
+              [routerLink]="['/main/pm/manage-projects']">Projects</a></span></span>
+      </li>
+      <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span title><i nz-icon type="book" [routerLink]="['/main/pm/manage-projects/view/all-document']"></i><span class="nav-text"><a
+              [routerLink]="['/main/pm/manage-projects/view/all-document']">Documents</a></span></span>
+      </li>
+      <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span title><i nz-icon type="tags" [routerLink]="['/main/pm/manage-projects/view/public-document']"></i><span class="nav-text"><a
+              [routerLink]="['/main/pm/manage-projects/view/public-document']">Public Documents</a></span></span>
+      </li>
+      <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span title><i nz-icon type="edit" [routerLink]="['/main/pm/audit-plans']"></i><span class="nav-text" ><a [routerLink]="['/main/pm/audit-plans']">Audit
+              Plan</a></span></span>
+      </li>
+      <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
+        <span title><i nz-icon type="highlight" [routerLink]="['/main/pm/type']"></i><span class="nav-text" ><a [routerLink]="['/main/pm/type']">Tailoring
+              Document</a></span></span>
+      </li>
+    </ul>
+  </nz-sider>
+  
   <nz-layout>
-    <nz-sider [nzWidth]="200" style="background:#fff">
-      <ul nz-menu [nzMode]="'inline'" style="height:100%">
-        <li
-          *ngIf="me?.role === 'admin'"
-          routerLinkActive="ant-menu-item-selected"
-          nz-menu-item
-        >
-          <a [routerLink]="['/main/admin/add-new-account']">
-            <span title><i nz-icon type="user"></i> Add New Account</span>
-          </a>
-        </li>
-        <li
-          *ngIf="me?.role === 'admin'"
-          nz-menu-item
-          routerLinkActive="ant-menu-item-selected"
-        >
-          <a [routerLink]="['/main/admin/import-list-account']">
-            <span title><i nz-icon type="user"></i> Import List Account</span>
-          </a>
-        </li>
-        <li
-          *ngIf="me?.role === 'admin'"
-          nz-menu-item
-          routerLinkActive="ant-menu-item-selected"
-        >
-          <a [routerLink]="['/main/admin/manage-account']">
-            <span title><i nz-icon type="user"></i> Manage Account</span>
-          </a>
-        </li>
-        <li nz-menu-item routerLinkActive="ant-menu-item-selected">
-          <a [routerLink]="['/main/pm/manage-projects']">
-            <span title><i nz-icon type="user"></i> Projects</span>
-          </a>
-        </li>
-        <li
-          *ngIf="me?.role !== 'admin'"
-          nz-menu-item
-          routerLinkActive="ant-menu-item-selected"
-        >
-          <a [routerLink]="['/main/pm/manage-projects/view/all-document']">
-            <span title><i nz-icon type="user"></i> Documents</span>
-          </a>
-        </li>
-        <li
-          *ngIf="me?.role !== 'admin'"
-          nz-menu-item
-          routerLinkActive="ant-menu-item-selected"
-        >
-          <a [routerLink]="['/main/pm/manage-projects/view/public-document']">
-            <span title><i nz-icon type="user"></i> Public Documents</span>
-          </a>
-        </li>
-        <li
-          *ngIf="me?.role === 'admin'"
-          nz-menu-item
-          routerLinkActive="ant-menu-item-selected"
-        >
-          <a [routerLink]="['/main/admin/manage-projects/add']">
-            <span title><i nz-icon type="user"></i> Create Project</span>
-          </a>
-        </li>
-      </ul>
-    </nz-sider>
-    <nz-layout style="padding:0 24px 24px">
-      <router-outlet></router-outlet>
-    </nz-layout>
+    <nz-header>
+      <div class="navigation-container">
+        <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px; background-color: transparent">
+            <i
+            
+            class="trigger"
+            nz-icon
+            [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"
+          ></i>
+          <li nz-menu-item >
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+              <input type="text" [(ngModel)]="text" (keydown)="onKeydown($event)" nz-input placeholder=" search ..." />
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+              <i nz-icon type="search"></i>
+            </ng-template>
+          </li>
+          <li nz-menu-item>
+            <nz-select style="width: 120px;" [(ngModel)]="selectedProvince">
+              <nz-option *ngFor="let p of data" [nzValue]="p.value" [nzLabel]="p.name"></nz-option>
+            </nz-select>
+          </li>
+          <li nz-menu-item>
+            <button nz-button nzType="primary" (click)="filter()">
+              <i nz-icon type="search"></i>Search
+            </button>
+          </li>
+        </ul>
+        <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px; background-color: transparent">
+          <li nz-menu-item style="max-width:250px; overflow: hidden">
+            <nz-dropdown [nzTrigger]="'click'">
+              <a nz-dropdown> {{ me?.name }} <i nz-icon type="down"></i> </a>
+              <ul nz-menu>
+                <li nz-menu-item (click)="logout()">
+                  Logout
+                </li>
+              </ul>
+            </nz-dropdown>
+          </li>
+        </ul>
+      </div>
+    </nz-header>
+    <router-outlet></router-outlet>
   </nz-layout>
+  
+  
+
 </nz-layout>

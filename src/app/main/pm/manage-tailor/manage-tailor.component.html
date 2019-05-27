@@ -2,7 +2,10 @@
   class="content"
   style="background:#fff;margin-top: 20px; padding: 24px; min-height: 100vh ; display: flex; justify-content: center ; "
 >
-  <div style="width: 90%; overflow: scroll;">
+  <div style="width: 100%;overflow: scroll ">
+    <div (click)="addTailor()">
+      <button nz-button nzType="primary" *ngIf="me?.role == 'pm'"  >Add Tailor</button>
+    </div>
     <div style="margin-top:20px; ">
       <nz-table
         #nzTable
@@ -10,32 +13,31 @@
         [nzData]="displayData"
         [nzPageSize]="10"
         [nzLoading]="loadingTable"
-        #filterTable
       >
         <thead (nzSortChange)="sort($event)" nzSingleSort>
           <tr>
-            <th nzShowSort nzSortKey="name">
-              Project Name
-            </th>
-            <th nzShowSort nzSortKey="description">Description</th>
-            <th nzShowSort nzSortKey="version">Version</th>
-            <th nzShowSort nzSortKey="type">Type</th>
-            <th>Status</th>
-            <th>File</th>
+            <th nzShowSort nzSortKey="index" >STT</th>
+            <th nzShowSort nzSortKey="name">Name</th>
+            <th nzShowSort nzSortKey="project">Project</th>
+
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <ng-template ngFor let-data [ngForOf]="nzTable.data">
             <tr>
+                <td>{{ data.index + 1 }}</td>
               <td>{{ data.name }}</td>
-              <td>{{ data.description }}</td>
-              <td>{{ data.version }}</td>
-              <td>{{ data.type }}</td>
-              <td>{{ data.status }}</td>
-              <td>
-                <a target="_blank" href="{{ data.file }}">
-                  Download
-                </a>
+              <td>{{ data.project }}</td>
+              <td style="width: 150px">
+                <button
+                  (click)="navigateView(data.id)"
+                  nz-button
+                  nzType="primary"
+                  nzGhost
+                >
+                  View
+                </button>
               </td>
             </tr>
           </ng-template>

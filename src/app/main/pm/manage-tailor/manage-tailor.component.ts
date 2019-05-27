@@ -1,61 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PmService } from '../pm.service';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/login/auth.service';
 
 @Component({
-  selector: 'app-manage-projects',
-  templateUrl: './manage-projects.component.html',
-  styleUrls: ['./manage-projects.component.css']
+  selector: 'app-manage-tailor',
+  templateUrl: './manage-tailor.component.html',
+  styleUrls: ['./manage-tailor.component.css']
 })
-export class ManageProjectsComponent implements OnInit {
-  constructor(
-    private router: Router,
-    private pmService: PmService,
-    private authService: AuthService
-  ) {}
-  searchValue = '';
-  me;
+export class ManageTailorComponent implements OnInit {
+  tailors = [];
   projects = [];
-  loadingTable = false;
   sortName = null;
   sortValue = null;
   displayData = [];
+  me
+
+  constructor(private pmService: PmService, private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
+    this.getAuth()
     this.getAll();
-    this.getAuth();
   }
 
-  addProject() {
-    this.router.navigate(['/main/pm/manage-projects/add']);
-  }
-
+  
   getAuth() {
     this.authService.getMe().subscribe(
       res => {
         this.me = res;
+        console.log(this.me)
       },
-      err => console.log('err', err)
+      err => console.log("err", err)
     );
   }
+
   getAll() {
-    this.loadingTable = true;
-    this.pmService.getAllProjects().subscribe(
+    this.pmService.getTailor().subscribe(
       res => {
         if (res['code'] === 1) {
+          console.log(res['data']);
           this.projects = res['data'];
-
+          this.projects.map((item, i) => (item.index = i));
           this.displayData = [...this.projects];
-          console.log(this.displayData);
-          this.loadingTable = false;
         }
       },
       err => {
         console.log('err', err);
-        this.loadingTable = false;
       }
     );
+  }
+
+  addTailor() {
+    this.router.navigate(['/main/pm/type/add']);
+  }
+
+  navigateView(id) {
+    this.router.navigate(['/main/pm/type/' + id]);
   }
 
   sort(sort: { key: string; value: string }): void {
@@ -80,13 +80,5 @@ export class ManageProjectsComponent implements OnInit {
     } else {
       this.displayData = data;
     }
-  }
-
-  navigateEdit(id) {
-    this.router.navigate([`/main/pm/manage-projects/${id}`]);
-  }
-
-  navigateView(id) {
-    this.router.navigate([`/main/pm/manage-projects/taskBoard/${id}`]);
   }
 }

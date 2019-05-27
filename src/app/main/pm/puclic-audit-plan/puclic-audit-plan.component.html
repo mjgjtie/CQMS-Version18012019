@@ -1,0 +1,77 @@
+<nz-content
+  class="content"
+  style="background:#fff;margin-top: 20px; padding: 24px; min-height: 100vh ; display: flex; justify-content: center ; "
+>
+  <div style="width: 90%; overflow: scroll;">
+    <div>
+      <button (click)="addAuditPlan()" nz-button nzType="primary">
+        Add Audit Plan 
+      </button>
+      <nz-form-control>
+        <label class="label"> </label>
+        <nz-select
+          style="width: 400px"
+          [(ngModel)]="projectFilter"
+          nzShowSearch
+          nzPlaceHolder="Select a project"
+          (ngModelChange)="filter($event)"
+        >
+          <nz-option nzValue="all" nzLabel="--All--"></nz-option>
+          <nz-option
+            *ngFor="let project of projects"
+            nzValue="{{ project.name }}"
+            nzLabel="{{ project.name }}"
+          ></nz-option>
+        </nz-select>
+      </nz-form-control>
+    </div>
+    <div style="margin-top:20px; ">
+      <nz-table
+        #nzTable
+        [nzNoResult]="'No Result'"
+        [nzData]="filterPlan"
+        [nzPageSize]="10"
+        [nzLoading]="loadingTable"
+        #filterTable
+      >
+        <thead>
+          <tr>
+            <th nzCustomFilter>
+              STT
+            </th>
+            <th>Audit Name</th>
+            <th>Description</th>
+            <th>Owner</th>
+            <th>Created_at</th>
+            <th>Project</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-template ngFor let-data [ngForOf]="nzTable.data">
+            <tr>
+              <td>{{ data.index + 1 }}</td>
+              <td>{{ data.name }}</td>
+              <td>{{ data.description }}</td>
+              <td>{{ data.owner }}</td>
+              <td>{{ data.created_at }}</td>
+              <td>
+                {{ data.project }}
+              </td>
+              <td>
+                <button
+                  (click)="navigateEdit(data.id)"
+                  nz-button
+                  nzType="primary"
+                  nzGhost
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          </ng-template>
+        </tbody>
+      </nz-table>
+    </div>
+  </div>
+</nz-content>

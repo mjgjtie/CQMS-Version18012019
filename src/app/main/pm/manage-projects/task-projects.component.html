@@ -8,47 +8,43 @@
     </div>
 
     <div style="margin-top:20px; overflow: scroll">
-        <div class="form">
-            <h1>Simple Scrum Board</h1>
-            <input type="text" placeholder="Type Task" id="task" />
-            <button class="button" id="add-button" nz-button
-            nzType="primary">Add Task</button>
-            <button class="btn btn-success"
-          style="margin-left:550px;height: 40px"
-        (click)="navigateView()"
-        nzGhost
-      >
-      Documents
-      </button>
+        <div class="form" style="background:white">
+          <button _ngcontent-c8="" id="add-button" (click)="navigateView()" nz-button="" nztype="primary" style="margin-right:10px;float:right" class="ant-btn ant-btn-primary ng-star-inserted" ng-reflect-nz-type="primary" nz-wave="[object Object]"><span> Documents</span></button>
+            <h1>Task Board</h1>
+          <div style="display:inline">
+            <input nz-input id="task"  placeholder=" search task ..." />
+            <button _ngcontent-c8="" id="add-button" nz-button="" nztype="primary" style="margin-right:10px;margin-top:10px" class="ant-btn ant-btn-primary ng-star-inserted" ng-reflect-nz-type="primary" nz-wave="[object Object]"><span> Add Task</span></button>
           </div>
+      </div>
+          
       
       <div class="flex">
           <div class="scrum-board backlog">
             <h2>Backlog</h2>
             <div class="input-group overflow">
               <span>Fix Document #593</span>
-              <a href="#" class="drag">Drag</a>
+              
               <div class="margin-top-10">
                  <button class="button button-backlog">Backlog</button><button class="button button-progress">In Progress</button><button class="button button-done">Done</button><button class="button button-delete">Delete</button>
               </div>
             </div>
             <div class="input-group overflow">
               <span>Create TestCase #3934</span>
-              <a href="#" class="drag">Drag</a>
+              
               <div class="margin-top-10">
                 <button class="button button-backlog">Backlog</button><button class="button button-progress">In Progress</button><button class="button button-done">Done</button><button class="button button-delete">Delete</button>
               </div>
             </div>
             <div class="input-group overflow">
               <span>Collect all feedback from customer</span>
-              <a href="#" class="drag">Drag</a>
+
               <div class="margin-top-10">
                 <button class="button button-backlog">Backlog</button><button class="button button-progress">In Progress</button><button class="button button-done">Done</button><button class="button button-delete">Delete</button>
               </div>
             </div>
             <div class="input-group overflow">
               <span>Create A Plan for Document #3434</span>
-              <a href="#" class="drag">Drag</a>
+
               <div class="margin-top-10">
                 <button class="button button-backlog">Backlog</button><button class="button button-progress">In Progress</button><button class="button button-done">Done</button><button class="button button-delete">Delete</button>
               </div>

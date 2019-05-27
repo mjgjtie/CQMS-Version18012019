@@ -1,83 +1,32 @@
-<nz-content
-  class="content"
-  style="background:#fff;margin-top: 20px; padding: 24px; min-height: 100vh ; display: flex; justify-content: center ; "
->
-  <div style="width: 100%; ">
+<nz-content class="content"
+  style="background:#fff;margin-top: 20px; padding: 24px; min-height: 100vh ; display: flex; justify-content: center ; ">
+  <div style="width: 100%; overflow: scroll; ">
     <div *ngIf="me?.role === 'admin'" (click)="addProject()">
       <button nz-button nzType="primary">Add Projects</button>
     </div>
 
-    <div style="margin-top:20px; overflow: scroll">
-      <nz-table
-        #nzTable
-        [nzNoResult]="'No Result'"
-        [nzData]="projects"
-        [nzPageSize]="10"
-        [nzLoading]="loadingTable"
-        #filterTable
-      >
-      <div class="row">
+    <div style="margin-top:20px; ">
+      <nz-table #nzTable [nzNoResult]="'No Result'" [nzData]="displayData" [nzPageSize]="10" [nzLoading]="loadingTable">
+        <div nz-row [nzGutter]="12">
           <ng-template ngFor let-data [ngForOf]="nzTable.data">
-                  <div class="col-sm-3" style="height: 350px;">
-                    <div class="card" style="height: 300px;">
-                      <div class="card-body">
-                        <h5 class="card-title">{{ data.name }}</h5>
-                        <p class="card-text">{{data.description }}</p>
-                        <p class="card-text">{{data.start }}</p>
-                        <p class="card-text">{{data.end }}</p>
-                        <p class="card-text">{{ data.status ? "Active" : "Deactive" }}</p>
-                        <button
-                          [hidden]="data.role !== 'admin' && data.role !== 'pm'"
-                          (click)="navigateEdit(data.id)"
-                          nz-button
-                          nzType="primary"
-                          nzGhost
-                        >
-                          Edit
-                        </button>
-                        <button
-                          (click)="navigateView(data.id)"
-                          nz-button
-                          nzType="primary"
-                          nzGhost
-                        >
-                          View
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  
-            <!-- <tr>
-              <td style="width: 150px">{{ data.name }}</td>
-              <td class="width150">{{data.description }}</td>
-              <td class="width150">{{ data.role }}</td>
-              <td style="width: 150px">{{ data.start }}</td>
-              <td style="width: 150px">{{ data.end }}</td>
-              <td style="width: 150px">{{ data.role }}</td>
-              <td style="width: 150px">
-                {{ data.status ? "Active" : "Deactive" }}
-              </td>
-              <td style="width: 150px">
-                <button
-                  [hidden]="data.role !== 'admin' && data.role !== 'pm'"
-                  (click)="navigateEdit(data.id)"
-                  nz-button
-                  nzType="primary"
-                  nzGhost
-                >
-                  Edit
-                </button>
-                <button
-                  (click)="navigateView(data.id)"
-                  nz-button
-                  nzType="primary"
-                  nzGhost
-                >
-                  View
-                </button>
-              </td>
-            </tr> -->
-          </ng-template>
+          <div nz-col [nzSpan]="6">
+            <nz-card style="width:280px;" [nzBordered]="true" nzTitle="{{ data.name }}" [nzExtra]="extraTemplate" >
+                  <p class="card-text">{{data.description }}</p>
+                  <p class="card-text">{{data.start }}</p>
+                  <p class="card-text">{{data.end }}</p>
+                  <p class="card-text">{{ data.status ? "Active" : "Deactive" }}</p>
+            </nz-card>
+          </div>
+          <ng-template #extraTemplate>
+              <button [hidden]="data.role !== 'admin' && data.role !== 'pm'" (click)="navigateEdit(data.id)"
+                        nz-button nzType="primary" nzGhost>
+                        Edit
+                      </button>
+                      <button (click)="navigateView(data.id)" nz-button nzType="primary" nzGhost>
+                        View
+                      </button>
+            </ng-template>
+            </ng-template>
         </div>
       </nz-table>
     </div>

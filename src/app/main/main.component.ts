@@ -1,7 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
 import { AdminServiceService } from "./admin/admin-service.service";
 import { AuthService } from "../login/auth.service";
-import { Router } from "@angular/router";
+import { Router, NavigationExtras } from "@angular/router";
 
 @Component({
   selector: "app-main",
@@ -10,6 +10,34 @@ import { Router } from "@angular/router";
 })
 export class MainComponent implements OnInit {
   public me;
+  isCollapsed = false;
+  triggerTemplate: TemplateRef<void> | null = null;
+
+  @ViewChild('trigger') customTrigger: TemplateRef<void>;
+
+
+  selectedProvince;
+  text = "";
+
+  data = [
+    {
+      name: "All",
+      value: "all"
+    },
+    {
+      name: "Template",
+      value: "template"
+    },
+    {
+      name: "Checklist",
+      value: "checklist"
+    },
+    { name: "Standard", value: "standard" },
+    {
+      name: "Best Practice",
+      value: "best practice"
+    }
+  ];
 
   constructor(
     private authService: AuthService,
@@ -19,6 +47,7 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.getAuth();
+    this.selectedProvince = this.data[0].value;
   }
 
   getAuth() {
@@ -38,4 +67,29 @@ export class MainComponent implements OnInit {
         err => this.router.navigate(["/login"])
       );
   }
+
+  filter(){
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        text: this.text,
+        type: this.selectedProvince
+      }
+    };
+    this.router.navigate(
+      ["/main/pm/manage-projects/view/public-document"],
+      navigationExtras
+    );
+  }
+ 
+
+  onKeydown(e) {
+    if (e.key === "Enter") {
+     this.filter()
+    }
+  }
+  
+  changeTrigger(): void {
+    this.triggerTemplate = this.customTrigger;
+  }
+
 }
