@@ -40,6 +40,7 @@ export class ManageProjectsComponent implements OnInit {
     );
   }
   getAll() {
+    let count = 0;
     this.loadingTable = true;
     this.pmService.getAllProjects().subscribe(
       res => {
@@ -49,7 +50,10 @@ export class ManageProjectsComponent implements OnInit {
           this.displayData = [...this.projects];
           console.log(this.displayData);
           this.loadingTable = false;
+          count = this.displayData.length;
         }
+         
+         console.log(count);
       },
       err => {
         console.log('err', err);

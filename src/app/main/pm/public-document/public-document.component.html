@@ -8,10 +8,10 @@
     <div nz-row style="margin-top: 15px">
       <div nz-col [nzSpan]="18" [nzPush]="6" >
         <form #projectForm="ngForm">
-          <button *ngIf="document?.permission?.info" style="margin-right:10px" nz-button nzType="primary"
+          <!-- <button *ngIf="document?.permission?.info" style="margin-right:10px" nz-button nzType="primary"
             (click)="editDocument()">
             Edit Document
-          </button>
+          </button> -->
           <nz-form-item>
             <nz-form-control style="margin-top:10px">
               <label class="label">Document Name : </label>
@@ -92,16 +92,16 @@
             </nz-form-control>
             <div style="margin-top: 25px; display: flex; justify-content: space-between">
               <div class="left">
-                <button (click)="sendComment('reviewer')" nz-button nzType="default">
+                <button (click)="sendComment(document.role)" nz-button nzType="default">
                   Comment
                 </button>
               </div>
               <div class="right">
                 <button *ngIf="document.permission.approve" style="margin-right:10px" nz-button nzType="primary"
-                  (click)="approve('reviewer')" >
+                  (click)="approve(document.role)" >
                   Approve
                 </button>
-                <button *ngIf="document.permission.reject" nz-button nzType="danger" (click)="discard('reviewer')">
+                <button *ngIf="document.permission.reject" nz-button nzType="danger" (click)="discard(document.role)">
                   Reject
                 </button>
               </div>
@@ -110,25 +110,36 @@
         </form>
       </div>
       <div nz-col [nzSpan]="6" [nzPull]="18" style="right: 80%!important">
+        <!-- <cdk-virtual-scroll-viewport class="demo-infinite-container"> -->
+    <nz-collapse nzAccordion >
+      <nz-collapse-panel [nzHeader]="'REVIEWER Document'">
         <div *ngIf="reviewerList.length > 0">
-          <h2 style="text-align:center">REVIEWER</h2>
+          <!-- <h2 style="text-align:center">REVIEWER</h2> -->
           <nz-collapse nzAccordion>
             <nz-collapse-panel *ngFor="let data of reviewerList; let i = index" [nzHeader]="data.name"
               [nzActive]="data.id == paramId" (nzActiveChange)="activeCol(data.id, 'reviewer')">
             </nz-collapse-panel>
           </nz-collapse>
         </div>
-        <div *ngIf="qaoList.length > 0">
-            <h2 style="text-align:center">QAO</h2>
-            <nz-collapse nzAccordion>
-              <nz-collapse-panel *ngFor="let data of qaoList; let i = index" [nzHeader]="data.name"
-                [nzActive]="data.id == paramId" (nzActiveChange)="activeCol(data.id, 'uploader')">
-                
-              </nz-collapse-panel>
-            </nz-collapse>
-          </div>
+      </nz-collapse-panel>
+    </nz-collapse>
+      <nz-collapse nzAccordion >
+            <nz-collapse-panel [nzHeader]="'QAO Document'">
+              <div *ngIf="qaoList.length > 0">
+                  <!-- <h2 style="text-align:center">QAO</h2> -->
+                  <nz-collapse nzAccordion>
+                    <nz-collapse-panel *ngFor="let data of qaoList; let i = index" [nzHeader]="data.name"
+                      [nzActive]="data.id == paramId" (nzActiveChange)="activeCol(data.id, 'uploader')">
+                      
+                    </nz-collapse-panel>
+                  </nz-collapse>
+                </div>
+        </nz-collapse-panel>
+        </nz-collapse>
+        <nz-collapse nzAccordion >
+            <nz-collapse-panel [nzHeader]="'QAM Document'">
           <div *ngIf="qamList.length > 0">
-              <h2 style="text-align:center">QAM</h2>
+              <!-- <h2 style="text-align:center">QAM</h2> -->
               <nz-collapse nzAccordion>
                 <nz-collapse-panel *ngFor="let data of qamList; let i = index" [nzHeader]="data.name"
                   [nzActive]="data.id == paramId" (nzActiveChange)="activeCol(data.id, 'qam')">
@@ -136,6 +147,10 @@
                 </nz-collapse-panel>
               </nz-collapse>
             </div>
+          </nz-collapse-panel>
+        </nz-collapse>
+            
+          <!-- </cdk-virtual-scroll-viewport> -->
       </div>
       
     </div>

@@ -10,11 +10,11 @@
         <div nz-row [nzGutter]="12">
           <ng-template ngFor let-data [ngForOf]="nzTable.data">
           <div nz-col [nzSpan]="6">
-            <nz-card style="width:280px;" [nzBordered]="true" nzTitle="{{ data.name }}" [nzExtra]="extraTemplate" >
+            <nz-card style="width:280px;margin-top: 20px;" [nzBordered]="true" nzTitle="{{ data.name }}" [nzExtra]="extraTemplate" >
                   <p class="card-text">{{data.description }}</p>
                   <p class="card-text">{{data.start }}</p>
                   <p class="card-text">{{data.end }}</p>
-                  <p class="card-text">{{ data.status ? "Active" : "Deactive" }}</p>
+                  <!-- <p class="card-text">{{ data.status ? "Active" : "Deactive" }}</p> -->
             </nz-card>
           </div>
           <ng-template #extraTemplate>
@@ -22,7 +22,7 @@
                         nz-button nzType="primary" nzGhost>
                         Edit
                       </button>
-                      <button (click)="navigateView(data.id)" nz-button nzType="primary" nzGhost>
+                      <button (click)="navigateView(data.id)" nz-button nzType="primary" nzGhost style="margin-left:5px">
                         View
                       </button>
             </ng-template>

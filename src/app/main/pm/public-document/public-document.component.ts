@@ -23,7 +23,9 @@ export class PublicDocumentComponent implements OnInit {
     data: {},
     permission: {},
     reviewer: {},
-    reviewers: []
+    reviewers: [],
+    role: '',
+    idProject: ''
   };
   me;
   projectRole = null;
@@ -114,6 +116,8 @@ export class PublicDocumentComponent implements OnInit {
           this.document.reviewer = res['reviewer'];
           this.document.permission = res['permission'];
           this.document.reviewers = res['reviewers'];
+          this.document.role = role;
+          this.document.idProject = this.paramId;
           this.selectedReviewer = this.document.reviewer['id'];
         }
       },
@@ -149,6 +153,7 @@ export class PublicDocumentComponent implements OnInit {
             res => {
               this.notification.show('success', 'Success', 'Success !!!');
               this.comment = '';
+              location.reload();
             },
             err => {
               console.log('err', err);
@@ -187,6 +192,7 @@ export class PublicDocumentComponent implements OnInit {
               console.log('success', res);
               this.notification.show('success', 'Success', 'Success !!!');
               this.comment = '';
+              location.reload();
             },
             err => {
               console.log('err', err);
@@ -242,10 +248,12 @@ export class PublicDocumentComponent implements OnInit {
       res => {
         this.notification.show('success', 'Success', 'Success !!!');
         this.comment = '';
+        location.reload();
       },
       err => {
         console.log('err', err);
       }
     );
+    // this.router.navigate([`main/pm/manage-projects/view/${this.paramId}`]);
   }
 }

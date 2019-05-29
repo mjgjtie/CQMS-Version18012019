@@ -1,7 +1,9 @@
 <nz-layout class="layout" [ngStyle]="{ 'min-height': '100vh' }">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" [nzWidth]="200"
-    style="background:#fff">
-    <div class="logo"></div>
+    style="background:#011229">
+    <div class="logo" >
+      <img src="../../assets/img/logo.png" alt="lo-go" style="max-height: 32px;">
+    </div>
     <ul nz-menu nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" style="height:100%" [nzInlineCollapsed]="isCollapsed">
       <li *ngIf="me?.role === 'admin'" routerLinkActive="ant-menu-item-selected" nz-menu-item>
         <span title><i nz-icon type="user" [routerLink]="['/main/admin/add-new-account']"></i><span class="nav-text"><a
@@ -42,11 +44,10 @@
   </nz-sider>
   
   <nz-layout>
-    <nz-header>
+    <nz-header style="height: 68px;"> 
       <div class="navigation-container">
-        <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px; background-color: transparent">
+        <ul nz-menu [nzMode]="'horizontal'" style="line-height: 68px; background-color: transparent">
             <i
-            
             class="trigger"
             nz-icon
             [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
@@ -57,7 +58,7 @@
               <input type="text" [(ngModel)]="text" (keydown)="onKeydown($event)" nz-input placeholder=" search ..." />
             </nz-input-group>
             <ng-template #suffixIconSearch>
-              <i nz-icon type="search"></i>
+              <!-- <i nz-icon type="search"></i> -->
             </ng-template>
           </li>
           <li nz-menu-item>
@@ -71,10 +72,10 @@
             </button>
           </li>
         </ul>
-        <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px; background-color: transparent">
+        <ul nz-menu [nzMode]="'horizontal'" style="line-height: 68px; background-color: transparent">
           <li nz-menu-item style="max-width:250px; overflow: hidden">
             <nz-dropdown [nzTrigger]="'click'">
-              <a nz-dropdown> {{ me?.name }} <i nz-icon type="down"></i> </a>
+              <a nz-dropdown style="color: white"> {{ me?.name }} <i nz-icon type="down"></i> </a>
               <ul nz-menu>
                 <li nz-menu-item (click)="logout()">
                   Logout
@@ -87,7 +88,4 @@
     </nz-header>
     <router-outlet></router-outlet>
   </nz-layout>
-  
-  
-
 </nz-layout>
