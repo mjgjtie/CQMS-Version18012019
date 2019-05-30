@@ -79,7 +79,11 @@
             *ngIf="project?.role === 'admin' || me?.role === 'admin'"
           >
             <label class="label"> PM</label>
-            <nz-select name="qam" style="width: 100%;" [(ngModel)]="selectedPM">
+            <nz-select 
+            name="qam" 
+            style="width: 100%;" 
+            [(ngModel)]="selectedPM"
+            nzLoading>
               <nz-option
                 *ngFor="let item of pmList"
                 nzValue="{{ item.id }}"
@@ -88,7 +92,7 @@
               </nz-option>
             </nz-select>
           </nz-form-control>
-          <nz-form-control *ngIf="project?.role === 'pm'">
+          <nz-form-control *ngIf="project?.role === 'pm' || me?.role === 'pm'">
             <label class="label"> QAM</label>
             <nz-select
               name="qam"
@@ -103,7 +107,7 @@
               </nz-option>
             </nz-select>
           </nz-form-control>
-          <nz-form-control *ngIf="project?.role === 'pm'">
+          <nz-form-control *ngIf="project?.role === 'pm' || me?.role === 'pm'">
             <label class="label"> QAO</label>
             <nz-select
               name="qao"

@@ -1,6 +1,6 @@
 .logo {
   height: 32px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #011229;
   margin: 16px;
 }
 .navigation-container {
@@ -28,4 +28,21 @@ a:hover{
 }
 .trigger:hover {
   color: #f44253;
+}
+.alain-default__header-logo {
+  width: 200px;
+  margin-left: -16px;
+  transition: width .2s cubic-bezier(.25,0,.15,1);
+}
+.alain-default__header-logo-expanded{
+  display: inline;
+}
+.alain-default__collapsed .alain-default__header-logo-expanded {
+  display: none;
+}
+.alain-default__header-logo-collapsed, .alain-default__header-logo-expanded {
+  max-width: 100%;
+  vertical-align: middle;
+  -webkit-animation: 1s fadeIn;
+  animation: 1s fadeIn;
 }

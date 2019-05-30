@@ -1,8 +1,11 @@
 <nz-layout class="layout" [ngStyle]="{ 'min-height': '100vh' }">
   <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="triggerTemplate" [nzWidth]="200"
     style="background:#011229">
-    <div class="logo" >
-      <img src="../../assets/img/logo.png" alt="lo-go" style="max-height: 32px;">
+    <div class="logo">
+      <img class="alain-default__header-logo-expanded" src="../../assets/img/logo-full.svg" alt="lo-go-full"
+        style="max-height:32px;" />
+      <!-- <img class="alain-default__header-logo-collapsed" src="../../assets/img/logo.svg" alt="lo-go"
+        style="max-height:30px;" /> -->
     </div>
     <ul nz-menu nz-menu [nzTheme]="'dark'" [nzMode]="'inline'" style="height:100%" [nzInlineCollapsed]="isCollapsed">
       <li *ngIf="me?.role === 'admin'" routerLinkActive="ant-menu-item-selected" nz-menu-item>
@@ -10,8 +13,8 @@
               [routerLink]="['/main/admin/add-new-account']">Add New Account</a></span></span>
       </li>
       <li *ngIf="me?.role === 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <span title><i nz-icon type="user" [routerLink]="['/main/admin/import-list-account']"></i><span class="nav-text"><a
-              [routerLink]="['/main/admin/import-list-account']">Import List Account</a></span></span>
+        <span title><i nz-icon type="user" [routerLink]="['/main/admin/import-list-account']"></i><span
+            class="nav-text"><a [routerLink]="['/main/admin/import-list-account']">Import List Account</a></span></span>
       </li>
       <li *ngIf="me?.role === 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
         <span title><i nz-icon type="user" [routerLink]="['/main/admin/manage-account']"></i><span class="nav-text"><a
@@ -25,35 +28,35 @@
               [routerLink]="['/main/pm/manage-projects']">Projects</a></span></span>
       </li>
       <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <span title><i nz-icon type="book" [routerLink]="['/main/pm/manage-projects/view/all-document']"></i><span class="nav-text"><a
+        <span title><i nz-icon type="book" [routerLink]="['/main/pm/manage-projects/view/all-document']"></i><span
+            class="nav-text"><a
               [routerLink]="['/main/pm/manage-projects/view/all-document']">Documents</a></span></span>
       </li>
       <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <span title><i nz-icon type="tags" [routerLink]="['/main/pm/manage-projects/view/public-document']"></i><span class="nav-text"><a
-              [routerLink]="['/main/pm/manage-projects/view/public-document']">Public Documents</a></span></span>
+        <span title><i nz-icon type="tags" [routerLink]="['/main/pm/manage-projects/view/public-document']"></i><span
+            class="nav-text"><a [routerLink]="['/main/pm/manage-projects/view/public-document']">Public
+              Documents</a></span></span>
       </li>
       <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <span title><i nz-icon type="edit" [routerLink]="['/main/pm/audit-plans']"></i><span class="nav-text" ><a [routerLink]="['/main/pm/audit-plans']">Audit
+        <span title><i nz-icon type="edit" [routerLink]="['/main/pm/audit-plans']"></i><span class="nav-text"><a
+              [routerLink]="['/main/pm/audit-plans']">Audit
               Plan</a></span></span>
       </li>
       <li *ngIf="me?.role !== 'admin'" nz-menu-item routerLinkActive="ant-menu-item-selected">
-        <span title><i nz-icon type="highlight" [routerLink]="['/main/pm/type']"></i><span class="nav-text" ><a [routerLink]="['/main/pm/type']">Tailoring
+        <span title><i nz-icon type="highlight" [routerLink]="['/main/pm/type']"></i><span class="nav-text"><a
+              [routerLink]="['/main/pm/type']">Tailoring
               Document</a></span></span>
       </li>
     </ul>
   </nz-sider>
-  
+
   <nz-layout>
-    <nz-header style="height: 68px;"> 
+    <nz-header style="height: 68px;">
       <div class="navigation-container">
         <ul nz-menu [nzMode]="'horizontal'" style="line-height: 68px; background-color: transparent">
-            <i
-            class="trigger"
-            nz-icon
-            [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            (click)="isCollapsed = !isCollapsed"
-          ></i>
-          <li nz-menu-item >
+          <i class="trigger" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            (click)="isCollapsed = !isCollapsed"></i>
+          <li nz-menu-item>
             <nz-input-group [nzSuffix]="suffixIconSearch">
               <input type="text" [(ngModel)]="text" (keydown)="onKeydown($event)" nz-input placeholder=" search ..." />
             </nz-input-group>
@@ -86,6 +89,7 @@
         </ul>
       </div>
     </nz-header>
+    
     <router-outlet></router-outlet>
   </nz-layout>
 </nz-layout>

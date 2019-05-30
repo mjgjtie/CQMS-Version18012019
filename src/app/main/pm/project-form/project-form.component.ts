@@ -61,6 +61,7 @@ export class ProjectFormComponent implements OnInit {
     this.authService.getMe().subscribe(
       res => {
         this.me = res;
+        console.log('testid', res)
       },
       err => console.log('err', err)
     );
@@ -101,20 +102,41 @@ export class ProjectFormComponent implements OnInit {
     this.project.qam = this.selectedQAM;
     this.project.qao = this.selectedQAO;
     this.project.pm = this.selectedPM;
-    this.pmService.createProjectApi(this.project).subscribe(
-      res => {
-        if (res['code'] === 1) {
-          this.router.navigate(['/main/pm/manage-projects']);
-        } else if (res['code'] === 0) {
-          this.noti.show('error', 'Error', 'Action Fail !!');
-        }
-      },
-      err => console.log('err', err)
-    );
+    if(this.me.role === 'admin'){
+      this.pmService.createProjectApi(this.project).subscribe(
+        res => {
+          if (res['code'] === 1) {
+            this.router.navigate(['/main/pm/manage-projects']);
+          } else if (res['code'] === 0) {
+            this.noti.show('error', 'Error', 'Action Fail !!');
+          }
+        },
+        err => console.log('err', err)
+      );
+    }else {
+      if(this.me.role === 'pm'){
+        let parst = "";
+        parst = this.me.id;
+        this.project.pm = parst.toString();
+        // this.project.qao = ;
+        this.project.qam = ' ';
+        this.pmService.createProjectApi(this.project).subscribe(
+          res => {
+            if (res['code'] === 1) {
+              this.router.navigate(['/main/pm/manage-projects']);
+            } else if (res['code'] === 0) {
+              this.noti.show('error', 'Error', 'Action Fail !!');
+            }
+          },
+          err => console.log('err', err)
+        );
+      }
+    }
+    
   }
 
   updateProject() {
-    if (this.project.role === 'admin') {
+    if (this.project.role === 'admin' ) {
       this.project.pm = this.selectedPM;
       this.pmService.updateProjectApi(this.project).subscribe(
         res => {
@@ -137,6 +159,8 @@ export class ProjectFormComponent implements OnInit {
         res => {
           if (res['code'] === 1) {
             this.router.navigate(['/main/pm/manage-projects']);
+          } else if (res['code'] === 0) {
+            this.noti.show('error', 'Error', 'Action Fail !!');
           }
         },
         err => {
