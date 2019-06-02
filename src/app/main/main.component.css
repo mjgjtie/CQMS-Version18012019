@@ -46,3 +46,6 @@ a:hover{
   -webkit-animation: 1s fadeIn;
   animation: 1s fadeIn;
 }
+.ant-menu-item .nav-text {
+  font-size: 12px;
+}

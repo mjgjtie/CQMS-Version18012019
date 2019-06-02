@@ -10,10 +10,10 @@
         <div nz-row [nzGutter]="12">
           <ng-template ngFor let-data [ngForOf]="nzTable.data">
           <div nz-col [nzSpan]="6">
-            <nz-card style="width:280px;margin-top: 20px;" [nzBordered]="true" nzTitle="{{ data.name }}" [nzExtra]="extraTemplate" >
+            <nz-card style="width:280px;margin-top: 20px;margin-right:20px;" [nzBordered]="true" nzTitle="{{ data.name }}" [nzExtra]="extraTemplate" >
                   <p class="card-text">{{data.description }}</p>
-                  <p class="card-text">{{data.start }}</p>
-                  <p class="card-text">{{data.end }}</p>
+                  <p class="card-text" style="color:#1df21d">{{data.start }}</p>
+                  <p class="card-text" style="color:#fc051d">{{data.end }}</p>
                   <!-- <p class="card-text">{{ data.status ? "Active" : "Deactive" }}</p> -->
             </nz-card>
           </div>

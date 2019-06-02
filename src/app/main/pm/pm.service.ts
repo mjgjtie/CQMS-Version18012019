@@ -9,6 +9,10 @@ export class PmService {
 
   constructor(private http: HttpClient) {}
 
+  exportExcelApi(id) {
+    return this.http.get(`${this.url}all/audit/export/${id}`);
+  }
+
   createProjectApi(data) {
     return this.http.post(`${this.url}admin/project/add`, data);
   }

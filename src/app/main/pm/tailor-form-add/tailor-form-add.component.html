@@ -157,7 +157,16 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style="width: 200px;"
+      [(ngModel)]="objAllies['1-1']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
+      
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -173,14 +182,14 @@
       >
         <!-- Thay doi -->
           <textarea
-          [(ngModel)]="obj['1-1']"
+            [(ngModel)]="obj['1-1']"
             name=""
             id=""
             cols="30"
             rows="10"
           >
         </textarea>
-        <!-- {{obj['1-1']}} -->
+        
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -238,7 +247,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+          <nz-select
+          style="width: 200px;"
+          [(ngModel)]="objAllies['2-2']"
+          [disabled]=""
+        >
+          <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+          <nz-option nzLabel="N" nzValue="N"></nz-option>
+          <nz-option nzLabel="M" nzValue="M"></nz-option>
+        </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -253,7 +270,7 @@
         valign="top"
       >
         <textarea
-        [(ngModel)]="obj['2-1']"
+          [(ngModel)]="obj['2-1']"
           name=""
           id=""
           cols="30"
@@ -315,7 +332,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+            <nz-select
+            style ="width: 200px;"
+            [(ngModel)]="objAllies['3-2']"
+            [disabled]=""
+          >
+            <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+            <nz-option nzLabel="N" nzValue="N"></nz-option>
+            <nz-option nzLabel="M" nzValue="M"></nz-option>
+          </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -387,7 +412,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['4-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -467,7 +500,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['5-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -540,7 +581,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['6-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -617,7 +666,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['7-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -694,7 +751,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['8-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -774,7 +839,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['9-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -850,7 +923,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['10-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -929,7 +1010,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['11-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1013,7 +1102,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['12-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1089,7 +1186,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['13-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1166,7 +1271,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['14-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1243,7 +1356,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['15-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1258,26 +1379,28 @@
         valign="top"
       >
         <textarea
-        [(ngModel)]="obj['15-1']"
+          [(ngModel)]="obj['15-1']"
+         
+          name=""
+          
+          id=""
+          cols="30"
+          rows="10"
+        ></textarea>
+      </td>
+      <td
+        style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
+        align="left"
+        
+      >
+        <textarea
+          [(ngModel)]="obj['1-1']"
           name=""
           id=""
           cols="30"
           rows="10"
          
         ></textarea>
-      </td>
-      <td
-        style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
-        align="left"
-        valign="top"
-      >
-      <textarea
-      [(ngModel)]="obj['15-2']"
-      name=""
-      id=""
-      cols="30"
-      rows="10"
-    ></textarea>
       </td>
     </tr>
     <!-- 16 -->
@@ -1320,7 +1443,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['16-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1400,7 +1531,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['17-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1440,6 +1579,7 @@
         ></textarea>
       </td>
     </tr>
+    <!------18-->
     <tr>
       <td
         style="border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1486,7 +1626,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['18-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1503,7 +1651,7 @@
         
       >
         <textarea
-          [(ngModel)]="obj['17-1']"
+          [(ngModel)]="obj['18-1']"
           name=""
           id=""
           cols="30"
@@ -1518,7 +1666,7 @@
         
       >
         <textarea
-          [(ngModel)]="obj['17-2']"
+          [(ngModel)]="obj['18-2']"
           name=""
           id=""
           cols="30"
@@ -1645,7 +1793,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['19-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1724,7 +1880,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['20-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1801,7 +1965,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['21-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1878,7 +2050,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['22-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -1954,7 +2134,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['23-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2021,7 +2209,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['24-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2091,7 +2287,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['25-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2161,7 +2365,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['26-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2240,7 +2452,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['28-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2395,7 +2615,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['29-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2472,7 +2700,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['30-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2549,7 +2785,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['31-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2628,7 +2872,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['32-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2705,7 +2957,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['33-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2783,7 +3043,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['34-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2861,7 +3129,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['35-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -2942,7 +3218,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['36-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -3026,7 +3310,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['38-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -3188,7 +3480,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['39-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -3272,7 +3572,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['40-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"
@@ -3353,7 +3661,15 @@
         valign="top"
         bgcolor="#92D050"
       >
-        <font face="Arial">Y</font>
+      <nz-select
+      style ="width: 200px;"
+      [(ngModel)]="objAllies['41-2']"
+      [disabled]=""
+    >
+      <nz-option nzLabel="Y" nzValue="Y"></nz-option>
+      <nz-option nzLabel="N" nzValue="N"></nz-option>
+      <nz-option nzLabel="M" nzValue="M"></nz-option>
+    </nz-select>
       </td>
       <td
         style="border-top: 1px solid #bfbfbf; border-bottom: 1px solid #bfbfbf; border-left: 1px solid #bfbfbf; border-right: 1px solid #bfbfbf"

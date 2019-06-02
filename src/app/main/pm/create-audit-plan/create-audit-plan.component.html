@@ -87,6 +87,9 @@
               <span style="font-size: 25px; padding: 5px 25px 0 0"
                 >Audit Checklist</span
               >
+              
+              <button (click)="download()" nz-button nzType="primary" *ngIf="me?.role == 'qao' && audit.status == 'published'"  > Export Excel</button>
+              
               <button
                 *ngIf="permission.form"
                 (click)="addQuestion()"

@@ -15,6 +15,7 @@ export class TypeComponent implements OnInit {
   array = new Array(42);
   roleUser;
   id;
+  objApplies = {};
   constructor(
     private pmService: PmService,
     private activatedRoute: ActivatedRoute,
@@ -22,6 +23,7 @@ export class TypeComponent implements OnInit {
     private router: Router
   ) {
     this.obj = this.createObject();
+    this.objApplies = this.createObjApplies();
   }
 
   projectFilter = null;
@@ -34,6 +36,16 @@ export class TypeComponent implements OnInit {
       }
     }
     return obj;
+  }
+
+  createObjApplies() {
+    const objAllies = {};
+    for (let h = 1; h <= 42; h++) {
+      for (let k = 1; k <= 2; k++) {
+        objAllies[`${h}-${k}`] = 'Y';
+      }
+    }
+    return objAllies;
   }
 
   async ngOnInit() {
@@ -66,6 +78,7 @@ export class TypeComponent implements OnInit {
           this.name = res['data'].name;
           this.projectFilter = res['data'].project;
           this.roleUser = res['role'] === 'true' ? true : false;
+          this.objApplies = res['data'].content.applies;
         }
       },
       err => console.log('err')
@@ -83,7 +96,7 @@ export class TypeComponent implements OnInit {
       res => {
         if (res['code'] === 1) {
           this.obj = res['data'];
-          this.router.navigate(['main/pm/type'] );
+          this.router.navigate(['main/pm/type']);
         } else if (res['code'] === 0) {
           this.noti.show('error', 'Error', 'Action Fail !!');
         }

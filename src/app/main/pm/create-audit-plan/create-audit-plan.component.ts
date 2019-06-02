@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { NotificationService } from 'src/app/services/notification.service';
 import { Location } from '@angular/common';
+import { AuthService } from 'src/app/login/auth.service';
 
 @Component({
   selector: 'app-create-audit-plan',
@@ -31,7 +32,9 @@ export class CreateAuditPlanComponent implements OnInit {
       question: ''
     }
   ];
-
+  me;
+  audit_id = '' 
+  status = ''
   permission = {};
 
   constructor(
@@ -39,6 +42,7 @@ export class CreateAuditPlanComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private noti: NotificationService,
+    private authService: AuthService,
     private location: Location
   ) {}
 
@@ -49,10 +53,12 @@ export class CreateAuditPlanComponent implements OnInit {
         this.pmService.getDetailAuditPlan(param['id']).subscribe(
           res => {
             if (res['code'] === 1) {
+              this.audit_id = param['id'];
               this.audit = res['data'];
               this.questions = res['data'].checklist;
               this.rangeDate = [res['data'].start, res['data'].end];
               this.permission = res['permission'];
+              this.status = res['status'];
               console.log(this.permission);
             }
           },
@@ -67,8 +73,17 @@ export class CreateAuditPlanComponent implements OnInit {
       }
     });
     this.getAll();
+    this.getAuth();
   }
 
+  getAuth() {
+    this.authService.getMe().subscribe(
+      res => {
+        this.me = res;
+      },
+      err => console.log('err', err)
+    );
+  }
   onChange(result: Date[]): void {
     this.audit.start = format.format(result[0], 'MM/DD/YYYY');
     this.audit.end = format.format(result[1], 'MM/DD/YYYY');
@@ -140,6 +155,22 @@ export class CreateAuditPlanComponent implements OnInit {
       },
       err => console.log('err', err)
     );
+  }
+
+  exportExcel() {
+    this.pmService.exportExcelApi(this.audit_id).subscribe(
+      res => {
+        console.log('flie', res);
+      },
+      err => {
+        console.log('err', err);
+      }
+    );
+  }
+
+  download () {
+    //bo link vao cai ""
+    window.location.href = `http://cqms.tech/bkcqms/public/api/all/audit/export/${this.audit_id}`
   }
 
   postComment() {
